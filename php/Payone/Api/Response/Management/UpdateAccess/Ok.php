@@ -14,7 +14,7 @@
  *
  * @category        Payone
  * @package         Payone_Api
- * @subpackage      Enum
+ * @subpackage      Response
  * @copyright       Copyright (c) 2012 <info@noovias.com> - www.noovias.com
  * @author          Matthias Walter <info@noovias.com>
  * @license         <http://www.gnu.org/licenses/> GNU General Public License (GPL 3)
@@ -25,14 +25,11 @@
  *
  * @category        Payone
  * @package         Payone_Api
- * @subpackage      Enum
+ * @subpackage      Response
  * @copyright       Copyright (c) 2012 <info@noovias.com> - www.noovias.com
  * @license         <http://www.gnu.org/licenses/> GNU General Public License (GPL 3)
  * @link            http://www.noovias.com
  */
-class Payone_Api_Enum_FinancingType
+class Payone_Api_Response_Management_UpdateAccess_Ok extends Payone_Api_Response_Abstract
 {
-    const BSV = 'BSV'; // BILLSAFE
-    const CFR = 'CFR'; // COMMERZ FINANZ
-    const KLV = 'KLV'; // KLARNA INVOICING
 }

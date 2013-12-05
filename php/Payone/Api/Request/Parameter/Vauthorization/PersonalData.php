@@ -30,8 +30,8 @@
  * @license         <http://www.gnu.org/licenses/> GNU General Public License (GPL 3)
  * @link            http://www.noovias.com
  */
-class Payone_Api_Request_Parameter_Authorization_PersonalData
-    extends Payone_Api_Request_Parameter_Authorization_Abstract
+class Payone_Api_Request_Parameter_Vauthorization_PersonalData
+    extends Payone_Api_Request_Parameter_Vauthorization_Abstract
 {
     /**
      * Merchant's customer ID (Permitted symbols: 0-9, a-z, A-Z, .,-,_,/)
@@ -39,7 +39,7 @@ class Payone_Api_Request_Parameter_Authorization_PersonalData
      */
     protected $customerid = null;
     /**
-     * PAYONE debtor ID
+     * PAYONE debitor ID
      *
      * @var int
      */
@@ -59,7 +59,6 @@ class Payone_Api_Request_Parameter_Authorization_PersonalData
      * @var string
      */
     protected $country = null;
-    protected $state = null;
     protected $email = null;
     protected $telephonenumber = null;
     /**
@@ -76,15 +75,6 @@ class Payone_Api_Request_Parameter_Authorization_PersonalData
     protected $language = null;
     protected $vatid = null;
     protected $ip = null;
-    /**
-     * Enum Gender
-     * @var string
-     */
-    protected $gender = null;
-    /**
-     * @var string
-     */
-    protected $personalid = null;
 
     public function setAddressaddition($addressaddition)
     {
@@ -184,22 +174,6 @@ class Payone_Api_Request_Parameter_Authorization_PersonalData
         return $this->firstname;
     }
 
-    /**
-     * @param string $gender
-     */
-    public function setGender($gender)
-    {
-        $this->gender = $gender;
-    }
-
-    /**
-     * @return string
-     */
-    public function getGender()
-    {
-        return $this->gender;
-    }
-
     public function setIp($ip)
     {
         $this->ip = $ip;
@@ -236,22 +210,6 @@ class Payone_Api_Request_Parameter_Authorization_PersonalData
         return $this->lastname;
     }
 
-    /**
-     * @param string $personalid
-     */
-    public function setPersonalid($personalid)
-    {
-        $this->personalid = $personalid;
-    }
-
-    /**
-     * @return string
-     */
-    public function getPersonalid()
-    {
-        return $this->personalid;
-    }
-
     public function setSalutation($salutation)
     {
         $this->salutation = $salutation;
@@ -260,16 +218,6 @@ class Payone_Api_Request_Parameter_Authorization_PersonalData
     public function getSalutation()
     {
         return $this->salutation;
-    }
-
-    public function setState($state)
-    {
-        $this->state = $state;
-    }
-
-    public function getState()
-    {
-        return $this->state;
     }
 
     public function setStreet($street)

@@ -13,8 +13,8 @@
  * needs please refer to http://www.payone.de for more information.
  *
  * @category        Payone
- * @package         Payone_Api
- * @subpackage      Enum
+ * @package         Payone_SessionStatus
+ * @subpackage      Validator
  * @copyright       Copyright (c) 2012 <info@noovias.com> - www.noovias.com
  * @author          Matthias Walter <info@noovias.com>
  * @license         <http://www.gnu.org/licenses/> GNU General Public License (GPL 3)
@@ -24,15 +24,16 @@
 /**
  *
  * @category        Payone
- * @package         Payone_Api
- * @subpackage      Enum
+ * @package         Payone_SessionStatus
+ * @subpackage      Validator
  * @copyright       Copyright (c) 2012 <info@noovias.com> - www.noovias.com
  * @license         <http://www.gnu.org/licenses/> GNU General Public License (GPL 3)
  * @link            http://www.noovias.com
  */
-class Payone_Api_Enum_FinancingType
+
+
+
+abstract class Payone_SessionStatus_Validator_Abstract
+    implements Payone_SessionStatus_Validator_Interface
 {
-    const BSV = 'BSV'; // BILLSAFE
-    const CFR = 'CFR'; // COMMERZ FINANZ
-    const KLV = 'KLV'; // KLARNA INVOICING
 }

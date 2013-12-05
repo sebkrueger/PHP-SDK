@@ -30,9 +30,9 @@
  * @license         <http://www.gnu.org/licenses/> GNU General Public License (GPL 3)
  * @link            http://www.noovias.com
  */
-class Payone_Api_Enum_FinancingType
+class Payone_Api_Enum_PeriodUnit
 {
-    const BSV = 'BSV'; // BILLSAFE
-    const CFR = 'CFR'; // COMMERZ FINANZ
-    const KLV = 'KLV'; // KLARNA INVOICING
+    const YEAR = 'Y';
+    const MONTH = 'M';
+    const DAY = 'D';
 }

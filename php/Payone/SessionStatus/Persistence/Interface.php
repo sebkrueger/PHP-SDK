@@ -13,8 +13,8 @@
  * needs please refer to http://www.payone.de for more information.
  *
  * @category        Payone
- * @package         Payone_Api
- * @subpackage      Enum
+ * @package         Payone_SessionStatus
+ * @subpackage      Persistence
  * @copyright       Copyright (c) 2012 <info@noovias.com> - www.noovias.com
  * @author          Matthias Walter <info@noovias.com>
  * @license         <http://www.gnu.org/licenses/> GNU General Public License (GPL 3)
@@ -22,17 +22,32 @@
  */
 
 /**
+ * This Interface defines the methods that have to be implemented to save an api communication
  *
  * @category        Payone
- * @package         Payone_Api
- * @subpackage      Enum
+ * @package         Payone_SessionStatus
+ * @subpackage      Persistence
  * @copyright       Copyright (c) 2012 <info@noovias.com> - www.noovias.com
  * @license         <http://www.gnu.org/licenses/> GNU General Public License (GPL 3)
  * @link            http://www.noovias.com
  */
-class Payone_Api_Enum_FinancingType
+interface Payone_SessionStatus_Persistence_Interface
 {
-    const BSV = 'BSV'; // BILLSAFE
-    const CFR = 'CFR'; // COMMERZ FINANZ
-    const KLV = 'KLV'; // KLARNA INVOICING
+    /**
+     * @abstract
+     * @return string
+     */
+    public function getKey();
+
+    /**
+     * @abstract
+     * @param Payone_SessionStatus_Request_Interface $request
+     * @param Payone_SessionStatus_Response_Interface $response
+     * @return boolean
+     */
+    public function save(
+        Payone_SessionStatus_Request_Interface $request,
+        Payone_SessionStatus_Response_Interface $response
+    );
+
 }

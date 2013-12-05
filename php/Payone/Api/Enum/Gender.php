@@ -15,7 +15,7 @@
  * @category        Payone
  * @package         Payone_Api
  * @subpackage      Enum
- * @copyright       Copyright (c) 2012 <info@noovias.com> - www.noovias.com
+ * @copyright       Copyright (c) 2013 <info@noovias.com> - www.noovias.com
  * @author          Matthias Walter <info@noovias.com>
  * @license         <http://www.gnu.org/licenses/> GNU General Public License (GPL 3)
  * @link            http://www.noovias.com
@@ -26,13 +26,12 @@
  * @category        Payone
  * @package         Payone_Api
  * @subpackage      Enum
- * @copyright       Copyright (c) 2012 <info@noovias.com> - www.noovias.com
+ * @copyright       Copyright (c) 2013 <info@noovias.com> - www.noovias.com
  * @license         <http://www.gnu.org/licenses/> GNU General Public License (GPL 3)
  * @link            http://www.noovias.com
  */
-class Payone_Api_Enum_FinancingType
+class Payone_Api_Enum_Gender
 {
-    const BSV = 'BSV'; // BILLSAFE
-    const CFR = 'CFR'; // COMMERZ FINANZ
-    const KLV = 'KLV'; // KLARNA INVOICING
+    const FEMALE = 'f';
+    const MALE = 'm';
 }

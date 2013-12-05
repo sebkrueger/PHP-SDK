@@ -14,7 +14,7 @@
  *
  * @category        Payone
  * @package         Payone_Api
- * @subpackage      Enum
+ * @subpackage      Service
  * @copyright       Copyright (c) 2012 <info@noovias.com> - www.noovias.com
  * @author          Matthias Walter <info@noovias.com>
  * @license         <http://www.gnu.org/licenses/> GNU General Public License (GPL 3)
@@ -25,14 +25,18 @@
  *
  * @category        Payone
  * @package         Payone_Api
- * @subpackage      Enum
+ * @subpackage      Service
  * @copyright       Copyright (c) 2012 <info@noovias.com> - www.noovias.com
  * @license         <http://www.gnu.org/licenses/> GNU General Public License (GPL 3)
  * @link            http://www.noovias.com
  */
-class Payone_Api_Enum_FinancingType
+interface Payone_Api_Service_Payment_CreateAccessInterface
 {
-    const BSV = 'BSV'; // BILLSAFE
-    const CFR = 'CFR'; // COMMERZ FINANZ
-    const KLV = 'KLV'; // KLARNA INVOICING
+    /**
+     * @param Payone_Api_Request_CreateAccess $request
+     * @return Payone_Api_Response_CreateAccess_Approved|Payone_Api_Response_Error
+     * @throws Exception
+     */
+    public function createaccess(Payone_Api_Request_CreateAccess $request);
+
 }

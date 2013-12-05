@@ -30,9 +30,11 @@
  * @license         <http://www.gnu.org/licenses/> GNU General Public License (GPL 3)
  * @link            http://www.noovias.com
  */
-class Payone_Api_Enum_FinancingType
+class Payone_Api_Enum_AccessAction
 {
-    const BSV = 'BSV'; // BILLSAFE
-    const CFR = 'CFR'; // COMMERZ FINANZ
-    const KLV = 'KLV'; // KLARNA INVOICING
+    const UPDATE = 'update';
+    const CANCEL = 'cancel';
+    const REVERSE_CANCEL = 'reverse_cancel';
+    const LOCK = 'lock';
+    const UNLOCK = 'unlock';
 }

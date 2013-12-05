@@ -14,7 +14,7 @@
  *
  * @category        Payone
  * @package         Payone_Api
- * @subpackage      Enum
+ * @subpackage      Mapper
  * @copyright       Copyright (c) 2012 <info@noovias.com> - www.noovias.com
  * @author          Matthias Walter <info@noovias.com>
  * @license         <http://www.gnu.org/licenses/> GNU General Public License (GPL 3)
@@ -25,14 +25,22 @@
  *
  * @category        Payone
  * @package         Payone_Api
- * @subpackage      Enum
+ * @subpackage      Mapper
  * @copyright       Copyright (c) 2012 <info@noovias.com> - www.noovias.com
  * @license         <http://www.gnu.org/licenses/> GNU General Public License (GPL 3)
  * @link            http://www.noovias.com
  */
-class Payone_Api_Enum_FinancingType
+class Payone_Api_Mapper_Request_Payment_Vauthorization
+    extends Payone_Api_Mapper_Request_Payment_Abstract
+    implements Payone_Api_Mapper_Request_Interface
 {
-    const BSV = 'BSV'; // BILLSAFE
-    const CFR = 'CFR'; // COMMERZ FINANZ
-    const KLV = 'KLV'; // KLARNA INVOICING
+    public function map(Payone_Api_Request_Interface $request)
+    {
+        /** @var $request Payone_Api_Request_Vauthorization */
+        $this->mapAmount($request);
+        $this->mapInvoicingData($request);
+
+        return $request->toArray();
+    }
+
 }

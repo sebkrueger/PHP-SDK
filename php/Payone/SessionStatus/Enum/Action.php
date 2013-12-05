@@ -13,7 +13,7 @@
  * needs please refer to http://www.payone.de for more information.
  *
  * @category        Payone
- * @package         Payone_Api
+ * @package         Payone_SessionStatus
  * @subpackage      Enum
  * @copyright       Copyright (c) 2012 <info@noovias.com> - www.noovias.com
  * @author          Matthias Walter <info@noovias.com>
@@ -24,15 +24,19 @@
 /**
  *
  * @category        Payone
- * @package         Payone_Api
+ * @package         Payone_SessionStatus
  * @subpackage      Enum
  * @copyright       Copyright (c) 2012 <info@noovias.com> - www.noovias.com
  * @license         <http://www.gnu.org/licenses/> GNU General Public License (GPL 3)
  * @link            http://www.noovias.com
  */
-class Payone_Api_Enum_FinancingType
+class Payone_SessionStatus_Enum_Action
 {
-    const BSV = 'BSV'; // BILLSAFE
-    const CFR = 'CFR'; // COMMERZ FINANZ
-    const KLV = 'KLV'; // KLARNA INVOICING
+    const ADD = 'add';
+    const REMOVE = 'remove';
+    const ABOCANCEL = 'abocancel';
+    const RENEW = 'renew';
+    const CANCEL_REVERSAL = 'cancel_reversal';
+    const LOCK = 'lock';
+    const UNLOCK = 'unlock';
 }
