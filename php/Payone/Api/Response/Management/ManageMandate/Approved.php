@@ -14,7 +14,7 @@
  *
  * @category        Payone
  * @package         Payone_Api
- * @subpackage      Request
+ * @subpackage      Response
  * @copyright       Copyright (c) 2012 <info@noovias.com> - www.noovias.com
  * @author          Matthias Walter <info@noovias.com>
  * @license         <http://www.gnu.org/licenses/> GNU General Public License (GPL 3)
@@ -25,30 +25,29 @@
  *
  * @category        Payone
  * @package         Payone_Api
- * @subpackage      Request
+ * @subpackage      Response
  * @copyright       Copyright (c) 2012 <info@noovias.com> - www.noovias.com
  * @license         <http://www.gnu.org/licenses/> GNU General Public License (GPL 3)
  * @link            http://www.noovias.com
  */
-class Payone_Api_Request_Parameter_CreateAccess_PaymentMethod_DebitPayment
-    extends Payone_Api_Request_Parameter_CreateAccess_PaymentMethod_Abstract
+class Payone_Api_Response_Management_ManageMandate_Approved extends Payone_Api_Response_Abstract
 {
     /**
      * @var string
      */
-    protected $bankcountry = NULL;
+    protected $mandate_identification = NULL;
     /**
      * @var string
      */
-    protected $bankaccount = NULL;
+    protected $mandate_status = NULL;
     /**
      * @var string
      */
-    protected $bankcode = NULL;
+    protected $mandate_text = NULL;
     /**
      * @var string
      */
-    protected $bankaccountholder = NULL;
+    protected $creditor_identifier = NULL;
     /**
      * @var string
      */
@@ -57,73 +56,69 @@ class Payone_Api_Request_Parameter_CreateAccess_PaymentMethod_DebitPayment
      * @var string
      */
     protected $bic = NULL;
-    /**
-     * @var string
-     */
-    protected $mandate_identification = NULL;
 
     /**
-     * @param string $bankaccount
+     * @param string $mandateIdentification
      */
-    public function setBankaccount($bankaccount)
+    public function setMandateIdentification($mandateIdentification)
     {
-        $this->bankaccount = $bankaccount;
+        $this->mandate_identification = $mandateIdentification;
     }
 
     /**
      * @return string
      */
-    public function getBankaccount()
+    public function getMandateIdentification()
     {
-        return $this->bankaccount;
+        return $this->mandate_identification;
     }
 
     /**
-     * @param string $bankaccountholder
+     * @param string $mandateStatus
      */
-    public function setBankaccountholder($bankaccountholder)
+    public function setMandateStatus($mandateStatus)
     {
-        $this->bankaccountholder = $bankaccountholder;
-    }
-
-    /**
-     * @return string
-     */
-    public function getBankaccountholder()
-    {
-        return $this->bankaccountholder;
-    }
-
-    /**
-     * @param string $bankcode
-     */
-    public function setBankcode($bankcode)
-    {
-        $this->bankcode = $bankcode;
+        $this->mandate_status = $mandateStatus;
     }
 
     /**
      * @return string
      */
-    public function getBankcode()
+    public function getMandateStatus()
     {
-        return $this->bankcode;
+        return $this->mandate_status;
     }
 
     /**
-     * @param string $bankcountry
+     * @param string $mandateText
      */
-    public function setBankcountry($bankcountry)
+    public function setMandateText($mandateText)
     {
-        $this->bankcountry = $bankcountry;
+        $this->mandate_text = $mandateText;
     }
 
     /**
      * @return string
      */
-    public function getBankcountry()
+    public function getMandateText()
     {
-        return $this->bankcountry;
+        return $this->mandate_text;
+    }
+
+    /**
+     * @param string $creditorIdentifier
+     */
+    public function setCreditorIdentifier($creditorIdentifier)
+    {
+        $this->creditor_identifier = $creditorIdentifier;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCreditorIdentifier()
+    {
+        return $this->creditor_identifier;
     }
 
     /**
@@ -156,21 +151,5 @@ class Payone_Api_Request_Parameter_CreateAccess_PaymentMethod_DebitPayment
     public function getBic()
     {
         return $this->bic;
-    }
-
-    /**
-     * @param string $mandateIdentification
-     */
-    public function setMandateIdentification($mandateIdentification)
-    {
-        $this->mandate_identification = $mandateIdentification;
-    }
-
-    /**
-     * @return string
-     */
-    public function getMandateIdentification()
-    {
-        return $this->mandate_identification;
     }
 }

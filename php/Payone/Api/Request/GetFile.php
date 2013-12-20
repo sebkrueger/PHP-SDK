@@ -14,7 +14,7 @@
  *
  * @category        Payone
  * @package         Payone_Api
- * @subpackage      Response
+ * @subpackage      Request
  * @copyright       Copyright (c) 2012 <info@noovias.com> - www.noovias.com
  * @author          Matthias Walter <info@noovias.com>
  * @license         <http://www.gnu.org/licenses/> GNU General Public License (GPL 3)
@@ -25,72 +25,74 @@
  *
  * @category        Payone
  * @package         Payone_Api
- * @subpackage      Response
+ * @subpackage      Request
  * @copyright       Copyright (c) 2012 <info@noovias.com> - www.noovias.com
  * @license         <http://www.gnu.org/licenses/> GNU General Public License (GPL 3)
  * @link            http://www.noovias.com
  */
-class Payone_Api_Response_Authorization_Approved
-    extends Payone_Api_Response_Authorization_Abstract
+class Payone_Api_Request_GetFile extends Payone_Api_Request_Abstract
 {
+    protected $request = Payone_Api_Enum_RequestType::GETFILE;
+
+    /**
+     * @var int
+     */
+    protected $file_reference = NULL;
     /**
      * @var string
      */
-    protected $creditor_identifier = NULL;
+    protected $file_type = NULL;
     /**
-     * @var int
+     * @var string
      */
-    protected $clearing_date = NULL;
-    /**
-     * @var int
-     */
-    protected $clearing_amount = NULL;
+    protected $file_format = NULL;
+
 
     /**
-     * @param string $creditorIdentifier
+     * @param int $fileReference
      */
-    public function setCreditorIdentifier($creditorIdentifier)
+    public function setFileReference($fileReference)
     {
-        $this->creditor_identifier = $creditorIdentifier;
+        $this->file_reference = $fileReference;
+    }
+
+    /**
+     * @return int
+     */
+    public function getFileReference()
+    {
+        return $this->file_reference;
+    }
+
+    /**
+     * @param string $fileType
+     */
+    public function setFileType($fileType)
+    {
+        $this->file_type = $fileType;
     }
 
     /**
      * @return string
      */
-    public function getCreditorIdentifier()
+    public function getFileType()
     {
-        return $this->creditor_identifier;
+        return $this->file_type;
     }
 
     /**
-     * @param int $clearingDate
+     * @param string $fileFormat
      */
-    public function setClearingDate($clearingDate)
+    public function setFileFormat($fileFormat)
     {
-        $this->clearing_date = $clearingDate;
+        $this->file_format = $fileFormat;
     }
 
     /**
-     * @return int
+     * @return string
      */
-    public function getClearingDate()
+    public function getFileFormat()
     {
-        return $this->clearing_date;
-    }
-
-    /**
-     * @param int $clearingAmount
-     */
-    public function setClearingAmount($clearingAmount)
-    {
-        $this->clearing_amount = $clearingAmount;
-    }
-
-    /**
-     * @return int
-     */
-    public function getClearingAmount()
-    {
-        return $this->clearing_amount;
+        return $this->file_format;
     }
 }

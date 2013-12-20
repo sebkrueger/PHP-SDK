@@ -30,10 +30,10 @@
  * @license         <http://www.gnu.org/licenses/> GNU General Public License (GPL 3)
  * @link            http://www.noovias.com
  */
-class Payone_Api_Request_Parameter_CreateAccess_PaymentMethod_DebitPayment
-    extends Payone_Api_Request_Parameter_CreateAccess_PaymentMethod_Abstract
+class Payone_Api_Request_Parameter_ManageMandate_PaymentMethod_BankAccount
+    extends Payone_Api_Request_Parameter_ManageMandate_PaymentMethod_Abstract
 {
-    /**
+     /**
      * @var string
      */
     protected $bankcountry = NULL;
@@ -48,19 +48,27 @@ class Payone_Api_Request_Parameter_CreateAccess_PaymentMethod_DebitPayment
     /**
      * @var string
      */
-    protected $bankaccountholder = NULL;
-    /**
-     * @var string
-     */
     protected $iban = NULL;
     /**
      * @var string
      */
     protected $bic = NULL;
+
     /**
-     * @var string
+     * @param string $bankcountry
      */
-    protected $mandate_identification = NULL;
+    public function setBankcountry($bankcountry)
+    {
+        $this->bankcountry = $bankcountry;
+    }
+
+    /**
+     * @return string
+     */
+    public function getBankcountry()
+    {
+        return $this->bankcountry;
+    }
 
     /**
      * @param string $bankaccount
@@ -79,22 +87,6 @@ class Payone_Api_Request_Parameter_CreateAccess_PaymentMethod_DebitPayment
     }
 
     /**
-     * @param string $bankaccountholder
-     */
-    public function setBankaccountholder($bankaccountholder)
-    {
-        $this->bankaccountholder = $bankaccountholder;
-    }
-
-    /**
-     * @return string
-     */
-    public function getBankaccountholder()
-    {
-        return $this->bankaccountholder;
-    }
-
-    /**
      * @param string $bankcode
      */
     public function setBankcode($bankcode)
@@ -108,22 +100,6 @@ class Payone_Api_Request_Parameter_CreateAccess_PaymentMethod_DebitPayment
     public function getBankcode()
     {
         return $this->bankcode;
-    }
-
-    /**
-     * @param string $bankcountry
-     */
-    public function setBankcountry($bankcountry)
-    {
-        $this->bankcountry = $bankcountry;
-    }
-
-    /**
-     * @return string
-     */
-    public function getBankcountry()
-    {
-        return $this->bankcountry;
     }
 
     /**
@@ -156,21 +132,5 @@ class Payone_Api_Request_Parameter_CreateAccess_PaymentMethod_DebitPayment
     public function getBic()
     {
         return $this->bic;
-    }
-
-    /**
-     * @param string $mandateIdentification
-     */
-    public function setMandateIdentification($mandateIdentification)
-    {
-        $this->mandate_identification = $mandateIdentification;
-    }
-
-    /**
-     * @return string
-     */
-    public function getMandateIdentification()
-    {
-        return $this->mandate_identification;
     }
 }

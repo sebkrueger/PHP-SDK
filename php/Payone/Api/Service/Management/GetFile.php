@@ -14,7 +14,7 @@
  *
  * @category        Payone
  * @package         Payone_Api
- * @subpackage      Enum
+ * @subpackage      Service
  * @copyright       Copyright (c) 2012 <info@noovias.com> - www.noovias.com
  * @author          Matthias Walter <info@noovias.com>
  * @license         <http://www.gnu.org/licenses/> GNU General Public License (GPL 3)
@@ -25,27 +25,42 @@
  *
  * @category        Payone
  * @package         Payone_Api
- * @subpackage      Enum
+ * @subpackage      Service
  * @copyright       Copyright (c) 2012 <info@noovias.com> - www.noovias.com
  * @license         <http://www.gnu.org/licenses/> GNU General Public License (GPL 3)
  * @link            http://www.noovias.com
  */
-class Payone_Api_Enum_RequestType
+class Payone_Api_Service_Management_GetFile
+    extends Payone_Api_Service_Abstract
 {
-    const PREAUTHORIZATION = 'preauthorization';
-    const AUTHORIZATION = 'authorization';
-    const CAPTURE = 'capture';
-    const REFUND = 'refund';
-    const DEBIT = 'debit';
-    const CHECK3DS = '3dscheck';
-    const ADDRESSCHECK = 'addresscheck';
-    const CONSUMERSCORE = 'consumerscore';
-    const BANKACCOUNTCHECK = 'bankaccountcheck';
-    const CREDITCARDCHECK = 'creditcardcheck';
-    const GETINVOICE = 'getinvoice';
-    const CREATEACCESS = 'createaccess';
-    const UPDATEACCESS = 'updateaccess';
-    const MANAGEMANDATE = 'managemandate';
-    const GETFILE = 'getfile';
-    const VAUTHORIZATION = 'vauthorization';
+    /**
+     * @param Payone_Api_Request_GetFile $request
+     * @return Payone_Api_Response_Management_GetFile
+     * @throws Exception
+     */
+    public function getFile(Payone_Api_Request_GetFile $request)
+    {
+        try {
+            $this->validateRequest($request);
+
+            $requestParams = $request->toArray();
+
+            $adapter = $this->getAdapter();
+
+            $responseRaw = $adapter->request($requestParams);
+
+            $response = $this->getMapperResponse()->map($responseRaw);
+
+            $response->setRawResponse($adapter->getRawResponse());
+
+             $this->protocol($request, $response);
+        }
+        catch (Exception $e) {
+            $this->protocolException($e, $request);
+            throw $e;
+        }
+
+        return $response;
+    }
+
 }

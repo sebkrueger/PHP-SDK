@@ -14,7 +14,7 @@
  *
  * @category        Payone
  * @package         Payone_Api
- * @subpackage      Enum
+ * @subpackage      Response
  * @copyright       Copyright (c) 2012 <info@noovias.com> - www.noovias.com
  * @author          Matthias Walter <info@noovias.com>
  * @license         <http://www.gnu.org/licenses/> GNU General Public License (GPL 3)
@@ -25,27 +25,46 @@
  *
  * @category        Payone
  * @package         Payone_Api
- * @subpackage      Enum
+ * @subpackage      Response
  * @copyright       Copyright (c) 2012 <info@noovias.com> - www.noovias.com
  * @license         <http://www.gnu.org/licenses/> GNU General Public License (GPL 3)
  * @link            http://www.noovias.com
  */
-class Payone_Api_Enum_RequestType
+class Payone_Api_Response_Management_GetFile extends Payone_Api_Response_Abstract
 {
-    const PREAUTHORIZATION = 'preauthorization';
-    const AUTHORIZATION = 'authorization';
-    const CAPTURE = 'capture';
-    const REFUND = 'refund';
-    const DEBIT = 'debit';
-    const CHECK3DS = '3dscheck';
-    const ADDRESSCHECK = 'addresscheck';
-    const CONSUMERSCORE = 'consumerscore';
-    const BANKACCOUNTCHECK = 'bankaccountcheck';
-    const CREDITCARDCHECK = 'creditcardcheck';
-    const GETINVOICE = 'getinvoice';
-    const CREATEACCESS = 'createaccess';
-    const UPDATEACCESS = 'updateaccess';
-    const MANAGEMANDATE = 'managemandate';
-    const GETFILE = 'getfile';
-    const VAUTHORIZATION = 'vauthorization';
+    /**
+     * @var string
+     */
+    protected $response = NULL;
+
+    /**
+     * @param string $response
+     */
+    public function setResponse($response)
+    {
+        $this->response = $response;
+    }
+
+    /**
+     * @return string
+     */
+    public function getResponse()
+    {
+        return $this->response;
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        if ($this->isError()) {
+            $result = parent::__toString();
+        }
+        else {
+            $stringArray = array('status=' . $this->getStatus(), 'data=PDF-Content');
+            $result = implode('|', $stringArray);
+        }
+        return $result;
+    }
 }
